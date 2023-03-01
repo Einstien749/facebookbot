@@ -14,23 +14,25 @@ def login():
 
 def Register():
     firstname = input("Enter Your First Name :")
-    firstname = input("Enter Your Last Name :")
+    lastname = input("Enter Your Last Name :")
     reg_email__ = input("Enter Your Mail :")
     reg_password__ = input("Enter Your Password :")
     birthday_day = int(input("Enter Your Birth Day :"))
-    birthday_month = int(nput("Enter Your Birth Month :"))
+    birthday_month = int(input("Enter Your Birth Month :"))
     birthday_year = int(input("Enter Your Birth Year :"))
     sex = int(input("Enter Your Sex. 1 for Male, 2 For Female :"))
     #password = input("Enter Your Password :")
     register_url = "https://www.facebook.com/login"
-    my_data = {"firstname":firstname, "pass":password, "reg_email__":reg_email__,"reg_password__":reg_password__, "birthday_day":birthday_day,"birthday_month":birthday_month, "birthday_year":birthday_year, "sex":sex}
+    my_data = {"firstname":firstname, "lastname":lastname, "reg_email__":reg_email__,"reg_password__":reg_password__, "birthday_day":birthday_day,"birthday_month":birthday_month, "birthday_year":birthday_year, "sex":sex}
     try:
-        post(register_url, json=my_data)
+        p = post(register_url, json=my_data)
+        print(p.text)
     except:
         print("Invalid Credentials")
 
 
-login()
+#login()
+#Register()
 
         
         
